@@ -1,0 +1,40 @@
+{
+  "name": "dsh-emacs-keys",
+  "version": "0.2.0",
+  "description": "Emacs 风格快捷键 for DeepSeek Harness Web —— 配置驱动的动态 Cordis 插件（功能树 + Emacs 记法，C-x C-r 热重载）",
+  "type": "module",
+  "main": "plugin.js",
+  "files": [
+    "plugin.js",
+    "_body_config_client.js",
+    "_body_config_host.js",
+    "emacs-keybindings.json",
+    "README.md"
+  ],
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis",
+    "emacs",
+    "keybindings",
+    "keyboard-shortcuts"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renshuo/dsh-emacs-keys.git"
+  },
+  "dsh": {
+    "kind": "dynamic-cordis-plugin",
+    "plugin": {
+      "name": "dsh-emacs-key-binding",
+      "prefix": "emacs",
+      "platforms": ["host", "client"],
+      "config": "./emacs-keybindings.json",
+      "entry": {
+        "host": "./_body_config_host.js",
+        "client": "./_body_config_client.js"
+      }
+    }
+  }
+}
