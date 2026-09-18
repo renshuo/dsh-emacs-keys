@@ -138,4 +138,6 @@ emacs-keybindings.json          功能树配置（Emacs 记法）
 
 ## 许可
 
-[MIT](LICENSE)
+[GPL-3.0-only](LICENSE)（GNU 通用公共许可证第 3 版）。
+
+本项目为自由软件：你可以在该许可证条款下重新分发和/或修改它。衍生作品须同样以 GPL-3.0 发布。
