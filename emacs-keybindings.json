@@ -1,0 +1,94 @@
+{
+  "说明": "emacs-key-binding 快捷键配置。Emacs 记法：C=Ctrl，M=Alt，S=Shift，SPC=空格；序列用空格分隔（如 \"C-x k\"）。context 取值：region=任何焦点生效，global=仅输入框外，editing=仅输入框内，prefix:C-x=C-x 前缀序列。修改后按 C-x C-r 热重载，或重新运行插件。",
+  "categories": [
+    {
+      "name": "区域操作（任何焦点）",
+      "context": "region",
+      "bindings": {
+        "region.kill":        { "key": "C-w",   "label": "剪切选中区域（进 kill-ring）" },
+        "region.copy":        { "key": "M-w",   "label": "复制选中区域（进 kill-ring）" },
+        "region.yank":        { "key": "C-y",   "label": "Yank 粘贴（粘到输入框）" },
+        "region.yank-pop":    { "key": "M-y",   "label": "yank-pop 轮换粘贴内容" },
+        "editing.set-mark":   { "key": "C-SPC", "label": "设置标记（mark，输入框内）" }
+      }
+    },
+    {
+      "name": "导航（输入框外）",
+      "context": "global",
+      "bindings": {
+        "nav.up":             { "key": "C-p",        "label": "向上滚动（上一屏）" },
+        "nav.down":           { "key": "C-n",        "label": "向下滚动（下一屏）" },
+        "nav.page-down":      { "key": "C-v",        "label": "向下翻页" },
+        "nav.page-up":        { "key": "M-v",        "label": "向上翻页" },
+        "nav.top":            { "key": "M-<",        "label": "跳到对话开头" },
+        "nav.bottom":         { "key": "M->",        "label": "跳到对话末尾" },
+        "nav.isearch-forward":  { "key": "C-s",      "label": "向前搜索（isearch）" },
+        "nav.isearch-backward": { "key": "C-r",      "label": "向后搜索（isearch）" },
+        "session.prev-alt":   { "key": "M-ArrowLeft",  "label": "上一个会话" },
+        "session.next-alt":   { "key": "M-ArrowRight", "label": "下一个会话" },
+        "view.font-zoom-in":  { "key": "C-=",        "label": "字号增大（含 C-+）" },
+        "view.font-zoom-out": { "key": "C--",        "label": "字号减小" },
+        "view.font-reset":    { "key": "C-0",        "label": "字号重置" },
+        "app.keyboard-quit":  { "key": "C-g",        "label": "取消 / 退出当前操作" },
+        "app.command-palette": { "key": "M-x",       "label": "打开命令面板" }
+      }
+    },
+    {
+      "name": "输入框编辑（输入框内）",
+      "context": "editing",
+      "bindings": {
+        "editing.beginning-of-line": { "key": "C-a",     "label": "跳到行首" },
+        "editing.end-of-line":       { "key": "C-e",     "label": "跳到行尾" },
+        "editing.forward-char":      { "key": "C-f",     "label": "向前移动一个字符" },
+        "editing.backward-char":     { "key": "C-b",     "label": "向后移动一个字符" },
+        "editing.forward-word":      { "key": "M-f",     "label": "向前移动一个单词" },
+        "editing.backward-word":     { "key": "M-b",     "label": "向后移动一个单词" },
+        "editing.previous-line":     { "key": "C-p",     "label": "上一行" },
+        "editing.next-line":         { "key": "C-n",     "label": "下一行" },
+        "nav.top":                   { "key": "M-<",     "label": "跳到行首（缓冲区首）" },
+        "nav.bottom":                { "key": "M->",     "label": "跳到行尾（缓冲区尾）" },
+        "nav.isearch-forward":       { "key": "C-s",     "label": "向前搜索" },
+        "nav.isearch-backward":      { "key": "C-r",     "label": "向后搜索" },
+        "editing.delete-char":       { "key": "C-d",     "label": "向前删除一个字符" },
+        "editing.backward-kill-char": { "key": "C-h",    "label": "向后删除一个字符" },
+        "editing.kill-word":         { "key": "M-d",     "label": "向前删除一个单词（进 kill-ring）" },
+        "editing.backward-kill-word": { "key": "M-Backspace", "label": "向后删除一个单词（进 kill-ring）" },
+        "editing.kill-line":         { "key": "C-k",     "label": "删除到行尾（kill-line，进 kill-ring）" },
+        "editing.transpose-chars":   { "key": "C-t",     "label": "交换两个字符位置" },
+        "editing.transpose-words":   { "key": "M-t",     "label": "交换两个单词位置" },
+        "editing.undo":              { "key": "C-z",     "label": "撤销" },
+        "editing.redo":              { "key": "C-S-z",   "label": "重做" },
+        "editing.undo-alt":          { "key": "C-/",     "label": "撤销（含 C-x u）" },
+        "view.font-zoom-in":         { "key": "C-=",     "label": "字号增大" },
+        "view.font-zoom-out":        { "key": "C--",     "label": "字号减小" },
+        "region.copy":               { "key": "C-c",     "label": "复制区域（接管浏览器 Ctrl+C）" },
+        "region.yank":               { "key": "C-v",     "label": "Yank 粘贴（接管浏览器 Ctrl+V）" },
+        "app.command-palette":       { "key": "M-x",     "label": "打开命令面板" }
+      }
+    },
+    {
+      "name": "C-x 前缀",
+      "context": "prefix:C-x",
+      "bindings": {
+        "app.swap-point-mark": { "key": "C-x C-x", "label": "交换光标位置与标记" },
+        "session.next":        { "key": "C-x n",   "label": "切换到下一个会话（含 C-x b）" },
+        "session.prev":        { "key": "C-x p",   "label": "切换到上一个会话" },
+        "session.kill":        { "key": "C-x k",   "label": "关闭当前会话" },
+        "layout.cycle-panel":  { "key": "C-x o",   "label": "切换到另一个面板" },
+        "layout.close-right":  { "key": "C-x 0",   "label": "关闭右侧面板" },
+        "layout.maximize":     { "key": "C-x 1",   "label": "最大化主区域（切换侧边栏）" },
+        "editing.undo":        { "key": "C-x u",   "label": "撤销" },
+        "editing.select-all":  { "key": "C-x h",   "label": "全选" },
+        "app.reload-config":   { "key": "C-x C-r", "label": "重新加载快捷键配置文件" }
+      }
+    },
+    {
+      "name": "前缀启动键",
+      "context": "prefix-start",
+      "bindings": {
+        "app.prefix-c-x": { "key": "C-x", "label": "C-x 前缀（等待组合键）" },
+        "app.prefix-c-u": { "key": "C-u", "label": "C-u 前缀（通用参数）" }
+      }
+    }
+  ]
+}
